@@ -76,7 +76,7 @@ from datetime import datetime, timedelta
 file_name = "AttendRecord.xlsx"
 df = pd.read_excel(file_name, header=None)
 # print(df)
-len(df)
+print(len(df))
 
 #step 2 find all "userID" rows
 #column index 1 (and column) contains text "userID:"
@@ -147,12 +147,12 @@ for user_id_row in user_rows:
 					# if t_out < t_in:
 					# 	t_out += timedelta(days=1)
 
-			if t_out < t_in:
-    			t_out += timedelta(days=1)
+		if t_out < t_in:
+			t_out += timedelta(days=1)
 
-			duration = t_out - t_in
-			total_duration += duration
-			present_days += 1
+		duration = t_out - t_in
+		total_duration += duration
+		present_days += 1
 
 	summaries.append({
 		"UserID":user_id,
